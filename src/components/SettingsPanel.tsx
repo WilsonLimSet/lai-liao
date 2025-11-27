@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Link from "next/link";
 import { SavedBusStop } from "@/lib/types";
 
 interface BusStopInfo {
@@ -230,6 +231,12 @@ export default function SettingsPanel({ busStops, onSave, onClose, isFirstTime }
           </p>
           <div className="text-center text-gray-500 text-sm">
             <p>Data from LTA DataMall</p>
+            <Link
+              href="/about"
+              className="text-blue-400 hover:underline mt-2 inline-block"
+            >
+              About Lai Liao
+            </Link>
           </div>
         </section>
       </div>

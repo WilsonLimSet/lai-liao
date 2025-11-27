@@ -1,9 +1,49 @@
 import type { Metadata, Viewport } from "next";
+import { Analytics } from "@vercel/analytics/react";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Lai Liao - SG Bus Timings",
-  description: "Real-time Singapore bus arrival times",
+  title: "Lai Liao - Free Singapore Bus Arrival Times Display",
+  description:
+    "Free real-time Singapore bus arrival times. Perfect for old iPads as a dedicated bus timing display at home. Check when your bus is coming - lai liao!",
+  keywords: [
+    "singapore bus timing",
+    "sg bus arrival",
+    "bus timing singapore",
+    "lta bus arrival",
+    "singapore bus app",
+    "bus arrival time singapore",
+    "sg bus",
+    "singapore public transport",
+    "bus display",
+    "ipad bus timing",
+  ],
+  authors: [{ name: "Lai Liao" }],
+  creator: "Lai Liao",
+  publisher: "Lai Liao",
+  metadataBase: new URL("https://buslailiao.com"),
+  alternates: {
+    canonical: "/",
+  },
+  openGraph: {
+    title: "Lai Liao - Free Singapore Bus Arrival Times",
+    description:
+      "Free real-time Singapore bus timings. Turn your old iPad into a dedicated bus arrival display!",
+    url: "https://buslailiao.com",
+    siteName: "Lai Liao",
+    locale: "en_SG",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Lai Liao - Free Singapore Bus Arrival Times",
+    description:
+      "Free real-time Singapore bus timings. Turn your old iPad into a dedicated bus arrival display!",
+  },
+  robots: {
+    index: true,
+    follow: true,
+  },
   manifest: "/manifest.json",
   appleWebApp: {
     capable: true,
@@ -31,7 +71,10 @@ export default function RootLayout({
         <link rel="apple-touch-icon" href="/icon-192.png" />
         <meta name="apple-mobile-web-app-capable" content="yes" />
       </head>
-      <body className="antialiased no-select">{children}</body>
+      <body className="antialiased no-select">
+        {children}
+        <Analytics />
+      </body>
     </html>
   );
 }
