@@ -225,19 +225,16 @@ export default function SettingsPanel({ busStops, onSave, onClose, isFirstTime }
         </section>
 
         {/* Info */}
-        <section className="mt-8 pt-8 border-t border-gray-800">
+        <section className="mt-8 pt-8 border-t border-gray-800 text-center">
           <p className="text-xs text-gray-500 mb-4">
-            Find your bus stop code on the pole at the bus stop, or on Google Maps.
+            Find your bus stop code on the bus stop pole or Google Maps
           </p>
-          <div className="text-center text-gray-500 text-sm">
-            <p>Data from LTA DataMall</p>
-            <Link
-              href="/about"
-              className="text-blue-400 hover:underline mt-2 inline-block"
-            >
-              About Lai Liao
-            </Link>
-          </div>
+          <Link
+            href="/about"
+            className="text-blue-400 hover:underline text-sm"
+          >
+            About Lai Liao
+          </Link>
         </section>
       </div>
     </div>

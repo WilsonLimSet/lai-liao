@@ -84,17 +84,14 @@ function ArrivalTime({ arrival, isPrimary }: { arrival: BusArrival | undefined; 
 
 export default function BusServiceCard({ service }: Props) {
   return (
-    <div className="bg-gray-900/50 rounded-2xl p-4 flex items-center border border-gray-800">
+    <div className="bg-gray-900/50 rounded-2xl p-3 flex items-center border border-gray-800 h-full">
       {/* Bus Number */}
-      <div className="w-24 flex-shrink-0">
-        <div className="text-3xl font-bold text-white">{service.no}</div>
-        <div className="text-xs text-gray-500 uppercase tracking-wide">
-          {service.operator}
-        </div>
+      <div className="w-20 flex-shrink-0">
+        <div className="text-2xl font-bold text-white">{service.no}</div>
       </div>
 
       {/* Arrival Times */}
-      <div className="flex-1 flex items-center justify-end gap-8">
+      <div className="flex-1 flex items-center justify-end gap-6">
         <ArrivalTime arrival={service.next} isPrimary />
         <ArrivalTime arrival={service.next2} />
         <ArrivalTime arrival={service.next3} />
