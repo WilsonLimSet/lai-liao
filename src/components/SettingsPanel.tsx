@@ -3,6 +3,7 @@
 import { useState } from "react";
 import Link from "next/link";
 import { SavedBusStop } from "@/lib/types";
+import { useTheme } from "@/lib/theme";
 
 interface BusStopInfo {
   code: string;
@@ -29,6 +30,7 @@ export default function SettingsPanel({ busStops, onSave, onClose, isFirstTime }
   const [stop2Name, setStop2Name] = useState(busStops[1]?.name || "");
   const [showStop2, setShowStop2] = useState(busStops[1] !== null);
   const [activeStop, setActiveStop] = useState<1 | 2>(1);
+  const { theme, toggleTheme } = useTheme();
 
   const handleSelectStop = (stop: BusStopInfo) => {
     if (activeStop === 1) {
@@ -60,7 +62,7 @@ export default function SettingsPanel({ busStops, onSave, onClose, isFirstTime }
   };
 
   return (
-    <div className="fixed inset-0 bg-black z-50 overflow-y-auto">
+    <div className="fixed inset-0 bg-theme-primary z-50 overflow-y-auto">
       <div className="min-h-screen p-4 md:p-8 max-w-2xl mx-auto">
         {/* Header */}
         <header className="flex items-center justify-between mb-6">
@@ -203,9 +205,38 @@ export default function SettingsPanel({ busStops, onSave, onClose, isFirstTime }
           {isFirstTime ? "Get Started" : "Save Settings"}
         </button>
 
+        {/* Theme Toggle */}
+        <section className="mb-8">
+          <h2 className="text-sm uppercase tracking-wide text-theme-secondary mb-3">
+            Appearance
+          </h2>
+          <div className="flex gap-2">
+            <button
+              onClick={() => theme !== "light" && toggleTheme()}
+              className={`flex-1 py-3 px-4 rounded-xl border transition-colors ${
+                theme === "light"
+                  ? "bg-blue-600 border-blue-600 text-white"
+                  : "bg-theme-secondary border-theme text-theme-secondary"
+              }`}
+            >
+              Light
+            </button>
+            <button
+              onClick={() => theme !== "dark" && toggleTheme()}
+              className={`flex-1 py-3 px-4 rounded-xl border transition-colors ${
+                theme === "dark"
+                  ? "bg-blue-600 border-blue-600 text-white"
+                  : "bg-theme-secondary border-theme text-theme-secondary"
+              }`}
+            >
+              Dark
+            </button>
+          </div>
+        </section>
+
         {/* Quick Select Stops */}
         <section>
-          <h2 className="text-sm uppercase tracking-wide text-gray-500 mb-3">
+          <h2 className="text-sm uppercase tracking-wide text-theme-secondary mb-3">
             Quick Select {showStop2 && `(for Stop ${activeStop})`}
           </h2>
           <div className="space-y-2">

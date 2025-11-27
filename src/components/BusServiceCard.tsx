@@ -58,7 +58,7 @@ function ArrivalTime({ arrival, isPrimary }: { arrival: BusArrival | undefined; 
   const { text, isArriving, minutes } = formatArrivalTime(arrival);
 
   if (text === "-") {
-    return <span className="text-gray-600">-</span>;
+    return <span className="text-theme-secondary">-</span>;
   }
 
   return (
@@ -66,7 +66,7 @@ function ArrivalTime({ arrival, isPrimary }: { arrival: BusArrival | undefined; 
       <span
         className={`
           ${isPrimary ? "text-4xl font-bold" : "text-2xl font-medium"}
-          ${isArriving ? "text-green-400" : "text-white"}
+          ${isArriving ? "text-green-500" : "text-theme-primary"}
           ${isArriving && isPrimary ? "animate-pulse-subtle" : ""}
         `}
       >
@@ -84,10 +84,10 @@ function ArrivalTime({ arrival, isPrimary }: { arrival: BusArrival | undefined; 
 
 export default function BusServiceCard({ service }: Props) {
   return (
-    <div className="bg-gray-900/50 rounded-2xl p-3 flex items-center border border-gray-800 h-full">
+    <div className="bg-theme-card rounded-2xl p-3 flex items-center border border-theme h-full">
       {/* Bus Number */}
       <div className="w-20 flex-shrink-0">
-        <div className="text-2xl font-bold text-white">{service.no}</div>
+        <div className="text-2xl font-bold text-theme-primary">{service.no}</div>
       </div>
 
       {/* Arrival Times */}

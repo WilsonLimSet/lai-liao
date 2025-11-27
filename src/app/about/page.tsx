@@ -33,7 +33,7 @@ export default function AboutPage() {
 
       <h1 className="text-3xl md:text-4xl font-bold mb-4">Lai Liao!</h1>
       <p className="text-xl text-gray-400 mb-8">
-        &quot;Coming already!&quot; in Singlish
+        来了 - &quot;Come already!&quot; in Singlish
       </p>
 
       <section className="space-y-6 text-gray-300">
@@ -41,8 +41,10 @@ export default function AboutPage() {
           <h2 className="text-xl font-semibold text-white mb-3">What is this?</h2>
           <p>
             Lai Liao is a free, open-source bus arrival display for Singapore.
-            It shows real-time bus timings from LTA, auto-refreshes every minute,
-            and works beautifully in dark mode.
+            It shows real-time bus timings from LTA and auto-refreshes every minute.
+          </p>
+          <p className="mt-3">
+            No ads, no tracking, no login required. Just wifi.
           </p>
         </div>
 
@@ -65,18 +67,6 @@ export default function AboutPage() {
               <li>Optional: Enable Guided Access to lock to this app</li>
             </ol>
           </div>
-        </div>
-
-        <div>
-          <h2 className="text-xl font-semibold text-white mb-3">Features</h2>
-          <ul className="list-disc list-inside space-y-1 text-gray-400">
-            <li>Real-time bus arrivals from LTA DataMall</li>
-            <li>Support for 2 bus stops (both sides of the street)</li>
-            <li>Auto-refresh every 60 seconds</li>
-            <li>Dark mode for always-on displays</li>
-            <li>Works offline as a PWA</li>
-            <li>No ads, no tracking, no login required</li>
-          </ul>
         </div>
 
         <div>
@@ -123,7 +113,17 @@ export default function AboutPage() {
       </section>
 
       <footer className="mt-12 pt-8 border-t border-gray-800 text-center text-gray-500 text-sm">
-        <p>Made with love in Singapore</p>
+        <p>
+          Made with love in Singapore by{" "}
+          <a
+            href="https://www.wilsonlimset.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-blue-400 hover:underline"
+          >
+            wilsonlimset
+          </a>
+        </p>
       </footer>
     </div>
   );
