@@ -4,9 +4,9 @@ import { ThemeProvider } from "@/lib/theme";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Lai Liao - Free Singapore Bus Arrival Times Display",
+  title: "Lai Liao - Singapore Bus Arrival Times Display",
   description:
-    "Free real-time Singapore bus arrival times. Perfect for old iPads as a dedicated bus timing display at home. Check when your bus is coming - lai liao!",
+    "Real-time Singapore bus arrival times. Perfect for old iPads as a dedicated bus timing display at home. Check when your bus is coming - lai liao!",
   keywords: [
     "singapore bus timing",
     "sg bus arrival",
@@ -27,9 +27,9 @@ export const metadata: Metadata = {
     canonical: "/",
   },
   openGraph: {
-    title: "Lai Liao - Free Singapore Bus Arrival Times",
+    title: "Lai Liao - Singapore Bus Arrival Times",
     description:
-      "Free real-time Singapore bus timings. Turn your old iPad into a dedicated bus arrival display!",
+      "Real-time Singapore bus timings. Turn your old iPad into a dedicated bus arrival display!",
     url: "https://buslailiao.com",
     siteName: "Lai Liao",
     locale: "en_SG",
@@ -37,9 +37,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Lai Liao - Free Singapore Bus Arrival Times",
+    title: "Lai Liao - Singapore Bus Arrival Times",
     description:
-      "Free real-time Singapore bus timings. Turn your old iPad into a dedicated bus arrival display!",
+      "Real-time Singapore bus timings. Turn your old iPad into a dedicated bus arrival display!",
   },
   robots: {
     index: true,
@@ -69,6 +69,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
+        <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
         <link rel="apple-touch-icon" href="/icon-192.png" />
         <meta name="apple-mobile-web-app-capable" content="yes" />
       </head>

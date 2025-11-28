@@ -88,11 +88,11 @@ export default function Home() {
 
       {/* Footer */}
       <footer className="pt-2 pb-1">
-        <div className="flex items-center justify-between text-xs text-gray-500">
+        <div className="flex items-center justify-between text-xs text-theme-secondary">
           <span>Updated {lastUpdated.toLocaleTimeString()}</span>
           <button
             onClick={() => setShowSettings(true)}
-            className="p-2 rounded-full bg-gray-800/50 hover:bg-gray-700 transition-colors"
+            className="p-2 rounded-full bg-theme-secondary hover:opacity-80 transition-colors border border-theme"
             aria-label="Settings"
           >
             <svg

@@ -71,7 +71,7 @@ export default function SettingsPanel({ busStops, onSave, onClose, isFirstTime }
               {isFirstTime ? "Welcome to Lai Liao" : "Settings"}
             </h1>
             {isFirstTime && (
-              <p className="text-gray-400 text-sm mt-1">
+              <p className="text-theme-secondary text-sm mt-1">
                 Enter your bus stop code to get started
               </p>
             )}
@@ -79,7 +79,7 @@ export default function SettingsPanel({ busStops, onSave, onClose, isFirstTime }
           {!isFirstTime && (
             <button
               onClick={onClose}
-              className="p-3 rounded-full bg-gray-800 hover:bg-gray-700 transition-colors"
+              className="p-3 rounded-full bg-theme-secondary hover:opacity-80 transition-colors border border-theme"
               aria-label="Close"
             >
               <svg
@@ -102,7 +102,7 @@ export default function SettingsPanel({ busStops, onSave, onClose, isFirstTime }
 
         {/* Bus Stop 1 */}
         <section className="mb-6">
-          <h2 className="text-sm uppercase tracking-wide text-gray-500 mb-3">
+          <h2 className="text-sm uppercase tracking-wide text-theme-secondary mb-3">
             Bus Stop {showStop2 ? "1 (Left)" : ""}
           </h2>
           <div className="space-y-3">
@@ -112,8 +112,8 @@ export default function SettingsPanel({ busStops, onSave, onClose, isFirstTime }
               onChange={(e) => setStop1Code(e.target.value)}
               onFocus={() => setActiveStop(1)}
               placeholder="Bus stop code (e.g., 13051)"
-              className={`w-full bg-gray-900 border rounded-xl px-4 py-3 text-white placeholder-gray-500 focus:outline-none ${
-                activeStop === 1 ? "border-blue-500" : "border-gray-700"
+              className={`w-full bg-theme-secondary border rounded-xl px-4 py-3 text-theme-primary placeholder-gray-500 focus:outline-none ${
+                activeStop === 1 ? "border-blue-500" : "border-theme"
               }`}
               maxLength={5}
             />
@@ -123,8 +123,8 @@ export default function SettingsPanel({ busStops, onSave, onClose, isFirstTime }
               onChange={(e) => setStop1Name(e.target.value)}
               onFocus={() => setActiveStop(1)}
               placeholder="Name (optional)"
-              className={`w-full bg-gray-900 border rounded-xl px-4 py-3 text-white placeholder-gray-500 focus:outline-none ${
-                activeStop === 1 ? "border-blue-500" : "border-gray-700"
+              className={`w-full bg-theme-secondary border rounded-xl px-4 py-3 text-theme-primary placeholder-gray-500 focus:outline-none ${
+                activeStop === 1 ? "border-blue-500" : "border-theme"
               }`}
             />
           </div>
@@ -134,12 +134,12 @@ export default function SettingsPanel({ busStops, onSave, onClose, isFirstTime }
         {showStop2 ? (
           <section className="mb-6">
             <div className="flex items-center justify-between mb-3">
-              <h2 className="text-sm uppercase tracking-wide text-gray-500">
+              <h2 className="text-sm uppercase tracking-wide text-theme-secondary">
                 Bus Stop 2 (Right)
               </h2>
               <button
                 onClick={handleRemoveStop2}
-                className="text-red-400 hover:text-red-300 text-sm transition-colors"
+                className="text-red-500 hover:text-red-400 text-sm transition-colors"
               >
                 Remove
               </button>
@@ -151,8 +151,8 @@ export default function SettingsPanel({ busStops, onSave, onClose, isFirstTime }
                 onChange={(e) => setStop2Code(e.target.value)}
                 onFocus={() => setActiveStop(2)}
                 placeholder="Bus stop code (e.g., 13059)"
-                className={`w-full bg-gray-900 border rounded-xl px-4 py-3 text-white placeholder-gray-500 focus:outline-none ${
-                  activeStop === 2 ? "border-blue-500" : "border-gray-700"
+                className={`w-full bg-theme-secondary border rounded-xl px-4 py-3 text-theme-primary placeholder-gray-500 focus:outline-none ${
+                  activeStop === 2 ? "border-blue-500" : "border-theme"
                 }`}
                 maxLength={5}
               />
@@ -162,8 +162,8 @@ export default function SettingsPanel({ busStops, onSave, onClose, isFirstTime }
                 onChange={(e) => setStop2Name(e.target.value)}
                 onFocus={() => setActiveStop(2)}
                 placeholder="Name (optional)"
-                className={`w-full bg-gray-900 border rounded-xl px-4 py-3 text-white placeholder-gray-500 focus:outline-none ${
-                  activeStop === 2 ? "border-blue-500" : "border-gray-700"
+                className={`w-full bg-theme-secondary border rounded-xl px-4 py-3 text-theme-primary placeholder-gray-500 focus:outline-none ${
+                  activeStop === 2 ? "border-blue-500" : "border-theme"
                 }`}
               />
             </div>
@@ -175,7 +175,7 @@ export default function SettingsPanel({ busStops, onSave, onClose, isFirstTime }
                 setShowStop2(true);
                 setActiveStop(2);
               }}
-              className="w-full border-2 border-dashed border-gray-700 hover:border-gray-500 rounded-xl px-4 py-4 text-gray-400 hover:text-gray-300 transition-colors flex items-center justify-center gap-2"
+              className="w-full border-2 border-dashed border-theme hover:opacity-80 rounded-xl px-4 py-4 text-theme-secondary transition-colors flex items-center justify-center gap-2"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -200,7 +200,7 @@ export default function SettingsPanel({ busStops, onSave, onClose, isFirstTime }
         <button
           onClick={handleSave}
           disabled={!stop1Code.trim()}
-          className="w-full bg-blue-600 hover:bg-blue-500 disabled:bg-gray-700 disabled:text-gray-500 rounded-xl px-4 py-3 font-medium transition-colors mb-8"
+          className="w-full bg-blue-600 hover:bg-blue-500 disabled:bg-theme-secondary disabled:text-theme-secondary disabled:border disabled:border-theme rounded-xl px-4 py-3 font-medium transition-colors mb-8 text-white"
         >
           {isFirstTime ? "Get Started" : "Save Settings"}
         </button>
@@ -244,11 +244,11 @@ export default function SettingsPanel({ busStops, onSave, onClose, isFirstTime }
               <button
                 key={stop.code}
                 onClick={() => handleSelectStop(stop)}
-                className="w-full text-left bg-gray-900 hover:bg-gray-800 rounded-xl p-4 border border-gray-800 transition-colors"
+                className="w-full text-left bg-theme-secondary hover:opacity-80 rounded-xl p-4 border border-theme transition-colors"
               >
                 <div className="flex items-center justify-between">
-                  <div className="font-medium">{stop.name}</div>
-                  <div className="text-gray-400 font-mono">{stop.code}</div>
+                  <div className="font-medium text-theme-primary">{stop.name}</div>
+                  <div className="text-theme-secondary font-mono">{stop.code}</div>
                 </div>
               </button>
             ))}
@@ -256,13 +256,13 @@ export default function SettingsPanel({ busStops, onSave, onClose, isFirstTime }
         </section>
 
         {/* Info */}
-        <section className="mt-8 pt-8 border-t border-gray-800 text-center">
-          <p className="text-xs text-gray-500 mb-4">
+        <section className="mt-8 pt-8 border-t border-theme text-center">
+          <p className="text-xs text-theme-secondary mb-4">
             Find your bus stop code on the bus stop pole or Google Maps
           </p>
           <Link
             href="/about"
-            className="text-blue-400 hover:underline text-sm"
+            className="text-blue-500 hover:underline text-sm"
           >
             About Lai Liao
           </Link>

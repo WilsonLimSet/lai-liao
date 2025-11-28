@@ -95,7 +95,7 @@ export default function BusServiceCard({ service }: Props) {
         <ArrivalTime arrival={service.next} isPrimary />
         <ArrivalTime arrival={service.next2} />
         <ArrivalTime arrival={service.next3} />
-        <span className="text-gray-600 text-sm w-8">min</span>
+        <span className="text-theme-secondary text-sm w-8">min</span>
       </div>
     </div>
   );
