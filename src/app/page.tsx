@@ -71,7 +71,7 @@ export default function Home() {
   const hasTwoStops = busStops[1] !== null;
 
   return (
-    <div className="h-screen bg-theme-primary text-theme-primary p-4 flex flex-col overflow-hidden">
+    <div className="h-screen bg-theme-primary text-theme-primary p-4 pt-8 flex flex-col overflow-hidden">
       {/* Bus Stop Panels - fill available space */}
       <main className={`flex-1 grid gap-4 ${hasTwoStops ? "grid-cols-2" : "grid-cols-1"}`}>
         <BusStopPanel

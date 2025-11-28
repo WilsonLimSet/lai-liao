@@ -113,17 +113,15 @@ export default function AboutPage() {
       </section>
 
       <footer className="mt-12 pt-8 border-t border-gray-800 text-center text-gray-500 text-sm">
-        <p>
-          Made with love in Singapore by{" "}
-          <a
-            href="https://www.wilsonlimset.com/"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-blue-400 hover:underline"
-          >
-            wilsonlimset
-          </a>
-        </p>
+        <p>Made with love in Singapore</p>
+        <a
+          href="https://www.wilsonlimset.com/"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-blue-400 hover:underline mt-1 inline-block"
+        >
+          wilsonlimset
+        </a>
       </footer>
     </div>
   );
