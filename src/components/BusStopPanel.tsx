@@ -78,8 +78,8 @@ export default function BusStopPanel({ busStopCode, busStopName }: Props) {
         />
       </div>
 
-      {/* Bus Services - fill available space */}
-      <div className="flex-1 flex flex-col gap-2 min-h-0">
+      {/* Bus Services - fill available space, scroll if overflow */}
+      <div className="flex-1 flex flex-col gap-2 min-h-0 overflow-y-auto">
         {loading && !data && (
           <div className="flex items-center justify-center flex-1">
             <div className="animate-spin rounded-full h-8 w-8 border-4 border-gray-700 border-t-white"></div>
@@ -112,7 +112,7 @@ export default function BusStopPanel({ busStopCode, busStopName }: Props) {
         )}
 
         {!isNightMode && sortedServices?.map((service) => (
-          <div key={service.no} className="flex-1 min-h-0">
+          <div key={service.no} className="flex-1 min-h-[80px]">
             <BusServiceCard service={service} />
           </div>
         ))}
